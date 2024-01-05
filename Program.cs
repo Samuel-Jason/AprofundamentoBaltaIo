@@ -10,6 +10,7 @@ namespace ImersãoBalta
             var payment = new Payment();
             var subcription = new Subcription();
             var context = new DataContext<Person, Payment, Subcription>();
+
             context.Save(payment);
             context.Save(person);
             context.Save(subcription);
