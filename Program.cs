@@ -1,4 +1,5 @@
-﻿using static ImersãoBalta.Program;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ImersãoBalta
 {
@@ -14,6 +15,14 @@ namespace ImersãoBalta
             context.Save(payment);
             context.Save(person);
             context.Save(subcription);
+
+            var payments = new List<Payment>
+            {
+                new Payment(),
+                new Payment(),
+                new Payment()
+            };
+
         }
 
         public class DataContext<P, PA, S>
@@ -23,21 +32,26 @@ namespace ImersãoBalta
         {
             public void Save(P entity)
             {
-                
+                Console.WriteLine($"Salvando {typeof(P).Name}");
             }
+
             public void Save(PA entity)
             {
-
+                Console.WriteLine($"Salvando {typeof(PA).Name}");
             }
+
             public void Save(S entity)
             {
-
+                Console.WriteLine($"Salvando {typeof(S).Name}");
             }
         }
 
-
+        public class Payment
+        {
+           
+        }
         public class Person { }
-        public class Payment { }
         public class Subcription { }
+
     }
 }
